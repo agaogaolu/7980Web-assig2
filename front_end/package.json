@@ -1,0 +1,30 @@
+{
+  "name": "front_end",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@amcharts/amcharts5": "^5.8.6",
+    "@amcharts/amcharts5-geodata": "^5.1.2",
+    "@popperjs/core": "^2.11.8",
+    "apexcharts": "^3.48.0",
+    "axios": "^1.6.8",
+    "bootstrap": "^5.3.3",
+    "jquery": "^3.7.1",
+    "mitt": "^3.0.1",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0",
+    "vue3-apexcharts": "^1.5.2",
+    "vue3-eventbus": "^2.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "vite": "^5.1.6"
+  }
+}

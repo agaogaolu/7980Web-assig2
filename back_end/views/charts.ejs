@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Results Chart</title>
+</head>
+
+<body>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+    
+
+
+    <a class="btn btn-primary me-2" href="javascript:history.back()" role="button">back</a>
+
+    <h1>Food quality evaluation:</h1>
+    <div id="chartdiv1" style="width: 100%; height: 400px;"></div>
+    <h1>Quality of service:</h1>
+    <div id="chartdiv2" style="width: 100%; height: 400px;"></div>
+    <h1>What could we improve?</h1>
+    <div id="chartdiv3" style="width: 100%; height: 400px;"></div>
+
+    <script>
+        am5.ready(function () {
+            function createChart(chartDiv, data) {
+                var root = am5.Root.new(chartDiv);
+                var chart = root.container.children.push(am5percent.PieChart.new(root, {}));
+                var series = chart.series.push(am5percent.PieSeries.new(root, {
+                    valueField: "count",
+                    categoryField: "_id"
+                }));
+                series.data.setAll(data);
+            }
+            
+            data1 = <%- JSON.stringify(question1Data) %>;
+            data2 = <%- JSON.stringify(question2Data) %>;
+            data3 = <%- JSON.stringify(question3Data) %>;
+            console.log(data1);
+            createChart("chartdiv1", data1);
+            createChart("chartdiv2", data2);
+            createChart("chartdiv3", data3);
+        });
+    </script>
+
+</body>
+
+</html>

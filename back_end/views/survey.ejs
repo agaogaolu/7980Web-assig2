@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>All Results</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <table>
+        <% for (var result of results) { %>
+            <tr>
+                <td><%= result._id %></td>
+            </tr>
+        <% } %>
+     </table>
+  </body>
+</html>
